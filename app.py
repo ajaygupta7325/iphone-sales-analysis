@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import altair as alt
 
 # Set page configuration for wide layout
-st.set_page_config(page_title="Font Size Example", layout="wide")
+st.set_page_config(page_title="Iphone Sales Analysis", layout="wide")
 
 st.markdown("""
 <style>
