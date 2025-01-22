@@ -68,30 +68,30 @@ def home_page():
         st.markdown(
             """
             <div style="background-color:#FFD700; color:black; padding:20px; border-radius:10px; text-align:center;">
-                <h3>UK</h3>
-                <p>Explore iPhone sales in the UK.</p>
+                <h3>Africa</h3>
+                <p>Explore iPhone sales in the Africa.</p>
             </div>
             """,
             unsafe_allow_html=True
         )
         st.markdown("<br>", unsafe_allow_html=True)
-        if st.button("View UK"):
-            st.session_state.page = "uk"
+        if st.button("View Africa"):
+            st.session_state.page = "africa"
 
     # Card 4
     with col4:
         st.markdown(
             """
             <div style="background-color:#FF6347; color:white; padding:20px; border-radius:10px; text-align:center;">
-                <h3>Canada</h3>
-                <p>Explore iPhone sales in Canada.</p>
+                <h3>China</h3>
+                <p>Explore iPhone sales in China.</p>
             </div>
             """,
             unsafe_allow_html=True
         )
         st.markdown("<br>", unsafe_allow_html=True)
-        if st.button("View Canada"):
-            st.session_state.page = "canada"
+        if st.button("View China"):
+            st.session_state.page = "china"
 
        # Add some spacing between the rows
     st.markdown("<br>", unsafe_allow_html=True)
@@ -104,21 +104,6 @@ def home_page():
         st.markdown(
             """
             <div style="background-color:#FF4500; color:white; padding:20px; border-radius:10px; text-align:center;">
-                <h3>Germany</h3>
-                <p>Explore iPhone sales in Germany.</p>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-        st.markdown("<br>", unsafe_allow_html=True)
-        if st.button("View Germany"):
-            st.session_state.page = "germany"
-
-    # Card 6
-    with col6:
-        st.markdown(
-            """
-            <div style="background-color:#9400D3; color:white; padding:20px; border-radius:10px; text-align:center;">
                 <h3>Japan</h3>
                 <p>Explore iPhone sales in Japan.</p>
             </div>
@@ -128,6 +113,21 @@ def home_page():
         st.markdown("<br>", unsafe_allow_html=True)
         if st.button("View Japan"):
             st.session_state.page = "japan"
+
+    # Card 6
+    with col6:
+        st.markdown(
+            """
+            <div style="background-color:#9400D3; color:white; padding:20px; border-radius:10px; text-align:center;">
+                <h3>U.A.E</h3>
+                <p>Explore iPhone sales in U.A.E.</p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+        st.markdown("<br>", unsafe_allow_html=True)
+        if st.button("View U.A.E"):
+            st.session_state.page = "dubai"
 
     # Card 7
     with col7:
@@ -149,15 +149,15 @@ def home_page():
         st.markdown(
             """
             <div style="background-color:#8B0000; color:white; padding:20px; border-radius:10px; text-align:center;">
-                <h3>China</h3>
-                <p>Explore iPhone sales in China.</p>
+                <h3>France</h3>
+                <p>Explore iPhone sales in France.</p>
             </div>
             """,
             unsafe_allow_html=True
         )
         st.markdown("<br>", unsafe_allow_html=True)
-        if st.button("View China"):
-            st.session_state.page = "china"
+        if st.button("View France"):
+            st.session_state.page = "france"
     st.markdown("<br>", unsafe_allow_html=True)
 
     # Second row of cards
@@ -168,15 +168,15 @@ def home_page():
         st.markdown(
             """
             <div style="background-color:#4682B4; color:white; padding:20px; border-radius:10px; text-align:center;">
-                <h3>Brazil</h3>
-                <p>Explore iPhone sales in Brazil.</p>
+                <h3>NewZealand</h3>
+                <p>Explore iPhone sales in NewZealand.</p>
             </div>
             """,
             unsafe_allow_html=True
         )
         st.markdown("<br>", unsafe_allow_html=True)
-        if st.button("View Brazil"):
-            st.session_state.page = "brazil"
+        if st.button("View NewZealand"):
+            st.session_state.page = "newZealand"
         
    
    # Add more spacing
@@ -306,7 +306,7 @@ def home_page():
             sales_amount = country_sales["total_sales"].values  # Array of total sales amounts
 
             # Optional: Display a bar chart for visualization
-            st.subheader("Sales Distribution by Country")
+            st.subheader("Sales Distribution by Country in Indian Currency")
             chart = alt.Chart(country_sales).mark_bar(color="orange").encode(
                 x="country:O",
                 y="total_sales:Q",
@@ -322,63 +322,147 @@ def home_page():
 
 # Function to render the USA page
 def usa_page():
-    st.title("USA Page")
-    st.write("Explore iPhone sales in the USA.")
-    if st.button("Back to Home"):
-        st.session_state.page = "home"
+    country="America"
+    country_page(country)
 
 # Function to render the India page
 def india_page():
-    st.title("India Page")
-    st.write("Explore iPhone sales in India.")
-    if st.button("Back to Home"):
-        st.session_state.page = "home"
+    country="INDIA"
+    country_page(country)
 
 # Function to render the UK page
-def uk_page():
-    st.title("UK Page")
-    st.write("Explore iPhone sales in the UK.")
-    if st.button("Back to Home"):
-        st.session_state.page = "home"
-
-# Function to render the Canada page
-def canada_page():
-    st.title("Canada Page")
-    st.write("Explore iPhone sales in Canada.")
-    if st.button("Back to Home"):
-        st.session_state.page = "home"
-
-def germany_page():
-    st.title("USA Page")
-    st.write("Explore iPhone sales in the USA.")
-    if st.button("Back to Home"):
-        st.session_state.page = "home"
-
-# Function to render the India page
-def japan_page():
-    st.title("India Page")
-    st.write("Explore iPhone sales in India.")
-    if st.button("Back to Home"):
-        st.session_state.page = "home"
-
-# Function to render the UK page
-def australia_page():
-    st.title("UK Page")
-    st.write("Explore iPhone sales in the UK.")
-    if st.button("Back to Home"):
-        st.session_state.page = "home"
+def africa_page():
+    country="Africa"
+    country_page(country)
+    
 
 # Function to render the Canada page
 def china_page():
-    st.title("Canada Page")
-    st.write("Explore iPhone sales in Canada.")
-    if st.button("Back to Home"):
-        st.session_state.page = "home"
+    country="China"
+    country_page(country)
+    
+
+def dubai_page():
+    country="U.A.E"
+    country_page(country)
+    
+    
+
+# Function to render the India page
+def japan_page():
+    country="Japan"
+    country_page(country)
+  
+    
+
+# Function to render the UK page
+def australia_page():
+    country="Australia"
+    country_page(country)
+    
+    
 
 # Function to render the Canada page
-def brazil_page():
-    st.title("Canada Page")
-    st.write("Explore iPhone sales in Canada.")
+def france_page():
+    country="France"
+    country_page(country)
+    
+    
+
+# Function to render the Canada page
+def newZealand_page():
+    country="NewZealand"
+    country_page(country)
+   
+   
+# Define a function to display the country-specific page
+def country_page(country):
+    selected_country = country
+
+    # Heading for the country page
+    st.markdown(
+        f"""
+        <div style='text-align:center;'>
+            <h1 style='font-size:10vh; color:orange;'>iPhone Sales in {selected_country}</h1>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+    # Load sales data
+    try:
+        salesdata = pd.read_csv("data.csv")
+    except FileNotFoundError:
+        st.error("File `data.csv` not found. Please upload the correct file.")
+        return
+
+    # Filter data for the selected country
+    country_data = salesdata[salesdata["country"] == selected_country]
+
+    if country_data.empty:
+        st.warning(f"No sales data available for {selected_country}.")
+        return
+
+    # Calculate metrics
+    total_sales = (country_data["selled"] * country_data["Sale Price"]).sum()
+    total_products_sold = country_data["selled"].sum()
+    most_sold_iphone = country_data.loc[country_data["selled"].idxmax()]["Product Name"]
+
+    # Display metrics in cards
+    col1, col2, col3 = st.columns(3)
+    col1.metric("Total Sales", f"${total_sales:,.2f}")
+    col2.metric("Total Products Sold", f"{total_products_sold}")
+    col3.metric("Most Sold iPhone", most_sold_iphone)
+
+    # Comparison section
+    st.markdown(
+        """
+        <div style='text-align:center; margin-top: 50px;'>
+            <h2 style='font-size:50px; color:#4CAF50;'>Comparison Between Top Two iPhone Models</h2>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+    # Find the top two most sold iPhone models
+    top_two = country_data.nlargest(2, "selled")
+
+    if len(top_two) < 2:
+        st.warning("Not enough data for comparison.")
+        return
+
+    model_1, model_2 = top_two["Product Name"].values
+    sales_1, sales_2 = top_two["selled"].values
+    price_1, price_2 = top_two["Sale Price"].values
+
+    col4, col5 = st.columns(2)
+
+    with col4:
+        st.markdown(
+            f"""
+            <div style="background-color:#1E90FF; color:white; padding:20px; border-radius:10px; text-align:center;">
+                <h3>{model_1}</h3>
+                <p>Sales Amount: ${sales_1 * price_1:,.2f}</p>
+                <a href="https://www.google.com/search?q={model_1}+review" target="_blank" style="color:yellow;">Product Url</a>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+    with col5:
+        st.markdown(
+            f"""
+            <div style="background-color:#32CD32; color:white; padding:20px; border-radius:10px; text-align:center;">
+                <h3>{model_2}</h3>
+                <p>Sales Amount: ${sales_2 * price_2:,.2f}</p>
+                <a href="https://www.google.com/search?q={model_2}+review" target="_blank" style="color:yellow;">Product Url</a>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+        
+    st.markdown("<br>", unsafe_allow_html=True)
+
     if st.button("Back to Home"):
         st.session_state.page = "home"
 
@@ -393,17 +477,17 @@ elif st.session_state.page == 'usa':
     usa_page()
 elif st.session_state.page == 'india':
     india_page()
-elif st.session_state.page == 'uk':
-    uk_page()
-elif st.session_state.page == 'canada':
-    canada_page()
-elif st.session_state.page == 'germany':
-    germany_page()
-elif st.session_state.page == 'japan':
-    japan_page()
-elif st.session_state.page == 'australia':
-    australia_page()
+elif st.session_state.page == 'africa':
+    africa_page()
 elif st.session_state.page == 'china':
     china_page()
-elif st.session_state.page == 'brazil':
-    brazil_page()
+elif st.session_state.page == 'japan':
+    japan_page()
+elif st.session_state.page == 'dubai':
+    dubai_page()
+elif st.session_state.page == 'france':
+    france_page()
+elif st.session_state.page == 'australia':
+    australia_page()
+elif st.session_state.page == 'newZealand':
+    newZealand_page()
