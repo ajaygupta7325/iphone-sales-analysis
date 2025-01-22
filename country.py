@@ -17,7 +17,7 @@ def home_page():
         unsafe_allow_html=True
     )
     # Country selection for detailed analysis
-    countries = ["USA", "INDIA", "UK", "Canada", "Germany", "Japan", "Australia", "China", "Brazil"]
+    countries = ["INDIA", "America", "Africa", "China", "Japan", "U.A.E", "France", "Australia", "NewZealand"]
     selected_country = st.selectbox("Select a country to explore:", countries)
 
     if selected_country:
